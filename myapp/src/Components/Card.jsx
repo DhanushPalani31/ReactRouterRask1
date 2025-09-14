@@ -1,9 +1,15 @@
 import React from 'react'
 
-export default function Card({image,title,price,productData,setCartDetails}) {
+export default function Card({image,title,price,productData,setCartDetails,cartDetails}) {
     
     function handleCartBtn(productData){
+        if(cartDetails.includes(productData)){
+          alert("Already product in cart");
+        }
+        else{
           setCartDetails((cartDetails)=>[...cartDetails,productData]);
+        }
+          
          
     }
   return (
